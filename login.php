@@ -184,6 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="register">
         Don't have an account?
         <a href="register.php">Register Here</a>
+        <a href="/Smartcanteen/index.php" style="display:block; margin-top:10px; color:#198754;">Back to Home</a>
     </div>
 
 </div>

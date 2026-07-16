@@ -160,12 +160,15 @@ h2 {
 
 
 </style>
+<link rel="stylesheet" href="style.css">
 
 
 </head>
 
 
 <body>
+
+<a href="dashboard.php" class="back-btn">← Back to Dashboard</a>
 
 
 <div class="container">
@@ -243,18 +246,6 @@ Order Now
 <?php } ?>
 
 
-
-</div>
-
-
-
-<a class="back" href="dashboard.php">
-← Back to Dashboard
-</a>
-
-
-
-</div>
 
 
 </body>

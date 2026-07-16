@@ -9,136 +9,151 @@ checkRole("admin");
 
 <title>Admin Dashboard - Smart Canteen</title>
 
-
 <style>
-
-* {
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-body {
-
-    background:#f4f6f8;
+body{
+    background:linear-gradient(135deg,#e8f5e9,#d4edda);
     min-height:100vh;
-
 }
 
-
-
-.header {
-
+.header{
     background:#198754;
-    color:white;
+    color:#fff;
     text-align:center;
-    padding:25px;
-
+    padding:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-
-
-.header h2 {
-
-    margin-bottom:10px;
-
+.header h2{
+    margin-bottom:8px;
+    font-size:30px;
 }
 
+.header p{
+    font-size:17px;
+}
 
-
-.dashboard {
-
+.dashboard{
     width:90%;
-    max-width:750px;
-    background:white;
+    max-width:900px;
     margin:40px auto;
+    background:#fff;
     padding:35px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
-    text-align:center;
-
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-
-
-.dashboard h3 {
-
+.dashboard h3{
+    text-align:center;
     color:#198754;
-    margin-bottom:25px;
-
+    margin-bottom:30px;
+    font-size:28px;
 }
 
-
-
-ul {
-
+ul{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
     list-style:none;
-
 }
 
-
-
-ul li {
-
-    margin:15px 0;
-
+ul{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+    list-style:none;
 }
 
-
-
-ul li a {
-
-    display:block;
-    background:#198754;
-    color:white;
-    padding:13px;
+ul li a{
+    height:170px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-decoration:none;
-    border-radius:6px;
+    color:#2c3e50;
+    font-size:20px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
     transition:0.3s;
-
+    border:1px solid #e5e7eb;
 }
 
+ul li:nth-child(1) a{
+    background:#E8F5E9;   /* Light Green */
+}
 
+ul li:nth-child(2) a{
+    background:#E3F2FD;   /* Light Blue */
+}
 
-ul li a:hover {
+ul li:nth-child(3) a{
+    background:#FFF8E1;   /* Light Yellow */
+}
 
+ul li:nth-child(4) a{
+    background:#F3E5F5;   /* Light Purple */
+}
+
+ul li:nth-child(5) a{
+    background:#E0F7FA;   /* Light Cyan */
+}
+
+ul li:nth-child(6) a{
+    background:#FDECEC;   /* Light Red */
+}
+
+.logout{
+    color:#c62828 !important;
+}
+
+ul li a span{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+ul li a:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.15);
+}
+
+ul li a span{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+ul li a:hover{
     background:#146c43;
-    transform:scale(1.02);
-
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
 }
 
+/* Logout */
 
-
-.logout {
-
-    background:#dc3545 !important;
-
+.logout{
+    background:#dbeafe !important;
+    color:#0d6efd !important;
 }
 
-
-
-.logout:hover {
-
-    background:#bb2d3b !important;
-
+.logout:hover{
+    background:#0d6efd !important;
+    color:#fff !important;
 }
 
-
-
-footer {
-
+footer{
     text-align:center;
+    margin:30px 0;
     color:#555;
-    margin-top:30px;
-
+    font-weight:bold;
 }
-
-
-
 </style>
-
 
 </head>
 
@@ -172,71 +187,52 @@ Admin Dashboard
 
 
 
+
 <ul>
 
+    <li>
+        <a href="verifyMenu.php">
+            <span>🍽️</span>
+            Verify Menu
+        </a>
+    </li>
 
-<li>
+    <li>
+        <a href="manageStudents.php">
+            <span>👨‍🎓</span>
+            Students
+        </a>
+    </li>
 
-<a href="verifyMenu.php">
-✅ Verify Menu
-</a>
+    <li>
+        <a href="manageOwner.php">
+            <span>🏪</span>
+            Owners
+        </a>
+    </li>
 
-</li>
+    <li>
+        <a href="reports.php">
+            <span>📊</span>
+            Reports
+        </a>
+    </li>
 
+    <li>
+        <a href="settings.php">
+            <span>⚙️</span>
+            Settings
+        </a>
+    </li>
 
-
-<li>
-
-<a href="manageStudents.php">
-👨‍🎓 Manage Students
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="manageOwner.php">
-🏪 Manage Canteen Owners
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="reports.php">
-📊 Reports
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="settings.php">
-⚙️ Settings
-</a>
-
-</li>
-
-
-
-<li>
-
-<a class="logout" href="../logout.php">
-🚪 Logout
-</a>
-
-</li>
-
-
+    <li>
+        <a href="../logout.php" class="logout">
+            <span>🚪</span>
+            Logout
+        </a>
+    </li>
 
 </ul>
-
 
 </div>
 

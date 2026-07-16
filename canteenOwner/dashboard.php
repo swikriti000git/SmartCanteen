@@ -7,103 +7,247 @@ checkRole("owner");
 <html>
 <head>
 
-    <title>Canteen Owner Dashboard - Smart Canteen</title>
+<title>Canteen Owner Dashboard - Smart Canteen</title>
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        body {
-            background: #f4f6f8;
-            min-height: 100vh;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
 
-        .header {
-            background: #198754;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
 
-        .header h2 {
-            margin-bottom: 10px;
-        }
+body{
+    background:linear-gradient(135deg,#e3f2fd,#e0f7fa);
+    min-height:100vh;
+}
 
-        .dashboard {
-            width: 90%;
-            max-width: 700px;
-            background: white;
-            margin: 40px auto;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            text-align: center;
-        }
 
-        .dashboard h3 {
-            color: #198754;
-            margin-bottom: 25px;
-        }
+/* Header */
 
-        ul {
-            list-style: none;
-        }
+.header{
+    background:#0d6efd;
+    color:#fff;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
 
-        ul li {
-            margin: 15px 0;
-        }
 
-        ul li a {
-            display: block;
-            padding: 13px;
-            background: #198754;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+.header h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
 
-        ul li a:hover {
-            background: #146c43;
-            transform: scale(1.02);
-        }
 
-        .logout {
-            background: #dc3545 !important;
-        }
+.header p{
+    font-size:17px;
+}
 
-        .logout:hover {
-            background: #bb2d3b !important;
-        }
 
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #555;
-        }
 
-    </style>
+/* Dashboard Container */
+
+.dashboard{
+
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+
+.dashboard h3{
+
+    text-align:center;
+    color:#0d6efd;
+    font-size:30px;
+    margin-bottom:35px;
+
+}
+
+
+
+/* Grid */
+
+ul{
+
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+
+}
+
+
+
+/* Dashboard Boxes */
+
+ul li a{
+
+    height:190px;
+    border-radius:16px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#2c3e50;
+
+    padding:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+/* Same Student Dashboard Card Colors */
+
+ul li:nth-child(1) a{
+    background:#E3F2FD;
+}
+
+
+ul li:nth-child(2) a{
+    background:#E8F5E9;
+}
+
+
+ul li:nth-child(3) a{
+    background:#FFF3E0;
+}
+
+
+ul li:nth-child(4) a{
+    background:#F3E5F5;
+}
+
+
+ul li:nth-child(5) a{
+    background:#FFFDE7;
+}
+
+
+ul li:nth-child(6) a{
+    background:#FDECEC;
+}
+
+
+
+/* Icons */
+
+ul li a span{
+
+    font-size:55px;
+    margin-bottom:15px;
+
+}
+
+
+
+/* Same Blue Hover as Student Dashboard */
+
+ul li a:hover{
+
+    background:#0d6efd;
+
+    color:white;
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(13,110,253,.35);
+
+}
+
+
+ul li a:hover span{
+
+    transform:scale(1.1);
+    transition:.3s;
+
+}
+
+
+ul li a:hover,
+ul li a:hover span{
+
+    color:white;
+
+}
+
+
+
+/* Logout Same as Student Dashboard */
+
+.logout{
+
+    background:#dbeafe !important;
+    color:#0d6efd !important;
+
+}
+
+
+.logout:hover{
+
+    background:#0d6efd !important;
+    color:white !important;
+
+}
+
+
+.logout:hover span{
+
+    color:white;
+
+}
+
+
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+    margin:30px 0;
+    color:#555;
+    font-weight:bold;
+
+}
+
+</style>
+</style>
 
 </head>
+
 
 <body>
 
 
 <div class="header">
 
-    <h2>
-        Welcome, <?php echo $_SESSION['full_name']; ?>
-    </h2>
+<h2>
+Welcome, <?php echo $_SESSION['full_name']; ?>
+</h2>
 
-    <p>
-        Smart Canteen Owner Panel
-    </p>
+<p>
+Smart Canteen Owner Panel
+</p>
 
 </div>
 
@@ -111,66 +255,99 @@ checkRole("owner");
 
 <div class="dashboard">
 
-    <h3>
-        Canteen Owner Dashboard
-    </h3>
+
+<h3>
+Canteen Owner Dashboard
+</h3>
 
 
-    <ul>
 
-        <li>
-            <a href="addMenu.php">
-                ➕ Add Menu Item
-            </a>
-        </li>
+<ul>
 
 
-        <li>
-            <a href="editMenu.php">
-                ✏️ Edit Menu
-            </a>
-        </li>
+<li>
+<a href="addMenu.php">
+
+<span>➕</span>
+Add Menu
+
+</a>
+</li>
 
 
-        <li>
-            <a href="deleteMenu.php">
-                🗑️ Delete Menu
-            </a>
-        </li>
+
+<li>
+<a href="editMenu.php">
+
+<span>✏️</span>
+Edit Menu
+
+</a>
+</li>
 
 
-        <li>
-            <a href="viewOrders.php">
-                📦 View Orders
-            </a>
-        </li>
 
 
-        <li>
-            <a href="menuHistory.php">
-                📜 Menu History
-            </a>
-        </li>
+<li>
+<a href="deleteMenu.php">
+
+<span>🗑️</span>
+Delete Menu
+
+</a>
+</li>
 
 
-        <li>
-            <a class="logout" href="../logout.php">
-                🚪 Logout
-            </a>
-        </li>
 
-    </ul>
+
+<li>
+<a href="viewOrders.php">
+
+<span>📦</span>
+View Orders
+
+</a>
+</li>
+
+
+
+
+<li>
+<a href="menuHistory.php">
+
+<span>📜</span>
+Menu History
+
+</a>
+</li>
+
+
+
+
+<li>
+<a href="../logout.php" class="logout">
+
+<span>🚪</span>
+Logout
+
+</a>
+</li>
+
+
+</ul>
 
 
 </div>
 
 
 
+
 <footer>
 
-    © <?php echo date("Y"); ?> Smart Canteen Management System
+© <?php echo date("Y"); ?> Smart Canteen Management System
 
 </footer>
+
 
 
 </body>

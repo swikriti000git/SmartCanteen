@@ -240,7 +240,7 @@ required
 Food Image
 </label>
 
-<input 
+<input mnb vjh gciytjc vhfiytjd cjhfj
 type="file" 
 name="image" 
 accept="image/*"

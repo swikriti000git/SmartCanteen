@@ -1,162 +1,157 @@
-<?php
-require_once "../config/auth.php";
-checkRole("student");
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-
-    <title>Student Dashboard - Smart Canteen</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f4f6f8;
-            min-height: 100vh;
-        }
-
-        .header {
-            background: #198754;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .header h2 {
-            margin-bottom: 10px;
-        }
-
-        .dashboard {
-            width: 90%;
-            max-width: 600px;
-            background: white;
-            margin: 40px auto;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            text-align: center;
-        }
-
-        .dashboard h3 {
-            color: #198754;
-            margin-bottom: 25px;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            margin: 15px 0;
-        }
-
-        ul li a {
-            display: block;
-            padding: 12px;
-            background: #198754;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        ul li a:hover {
-            background: #146c43;
-        }
-
-        .logout {
-            background: #dc3545 !important;
-        }
-
-        .logout:hover {
-            background: #bb2d3b !important;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #555;
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-<div class="header">
-
-    <h2>
-        Welcome, <?php echo $_SESSION['full_name']; ?>
-    </h2>
-
-    <p>
-        Smart Canteen Student Panel
-    </p>
-
-</div>
-
 
 <div class="dashboard">
 
-    <h3>
-        Student Dashboard
-    </h3>
+    <h2>Student Dashboard</h2>
 
+    <div class="grid">
 
-    <ul>
+        <a href="menu.php" class="box">
+            <div class="icon">🍽️</div>
+            <h3>View Menu</h3>
+            <p>View food items, price, quantity and place your order.</p>
+        </a>
 
-        <li>
-            <a href="menu.php">
-                🍔 View Menu
-            </a>
-        </li>
+        <a href="my_orders.php" class="box">
+            <div class="icon">🛒</div>
+            <h3>My Orders</h3>
+        View current order, token,
+        bill and order history.
+        </a>
 
+        <a href="profile.php" class="box">
+            <div class="icon">👤</div>
+            <h3>My Profile</h3>
+            <p>View and update your personal information.</p>
+        </a>
 
-        <li>
-            <a href="order.php">
-                🛒 Place Order
-            </a>
-        </li>
+        </a>
 
+        <a href="../logout.php" class="box logout">
+    <div class="icon">🚪</div>
+    <h3>Logout</h3>
+    <p>Sign out from your account.</p>
+</a>
 
-        <li>
-            <a href="myOrders.php">
-                📋 My Orders
-            </a>
-        </li>
+    </div>
 
-
-        <li>
-            <a href="profile.php">
-                👤 Profile
-            </a>
-        </li>
-
-
-        <li>
-            <a class="logout" href="../logout.php">
-                🚪 Logout
-            </a>
-        </li>
-
-    </ul>
-
+</div>
 </div>
 
 
-<footer>
-    © <?php echo date("Y"); ?> Smart Canteen Management System
-</footer>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
 
+body{
+    background:linear-gradient(135deg,#e3f2fd,#e0f7fa);
+    min-height:100vh;
+}
 
-</body>
-</html>
+.dashboard{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.dashboard h2{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:35px;
+    font-size:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.box{
+    height:190px;
+    border-radius:16px;
+    text-decoration:none;
+    color:#2c3e50;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Different colors for each card */
+
+.box:nth-child(1){
+    background:#E3F2FD;
+}
+
+.box:nth-child(2){
+    background:#E8F5E9;
+}
+
+.box:nth-child(3){
+    background:#FFF3E0;
+}
+
+.box:nth-child(4){
+    background:#F3E5F5;
+}
+
+.box:nth-child(5){
+    background:#FFFDE7;
+}
+
+.box:nth-child(6){
+    background:#FDECEC;
+}
+
+.box:hover{
+    transform:translateY(-8px);
+    background:#0d6efd;
+    color:#fff;
+    box-shadow:0 15px 30px rgba(13,110,253,.30);
+}
+
+.box:hover h3,
+.box:hover p{
+    color:#fff;
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.box h3{
+    color:#0d6efd;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.box p{
+    color:#555;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* Logout */
+
+.logout{
+    background:#dbeafe !important;
+    color:#0d6efd !important;
+}
+
+.logout:hover{
+    background:#0d6efd !important;
+    color:#fff !important;
+}
